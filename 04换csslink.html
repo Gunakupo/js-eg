@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        .wrap{
+            width: 340px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .pics{
+            overflow: hidden;
+            zoom: 1;
+        }
+        button{
+            margin: 10px;
+        }
+        .pic{
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <button>点击将DIV换成红色</button>
+        <div class="pics">
+            <div class="pic"></div>
+            <div class="pic"></div>
+            <div class="pic"></div>
+        </div>
+    </div>
+    <script>
+        var btn = document.querySelector("button");
+        var f = document.querySelector("link");
+        console.log(typeof f);
+        btn.onclick=function(){
+            var link = document.createElement("link");
+            link.setAttribute("rel","stylesheet");
+            link.setAttribute("href","red.css");
+            document.head.append(link);
+            this.onclick=null;
+        }
+    </script>
+</body>
+</html>

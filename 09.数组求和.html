@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wrap{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .wrap .input{
+            margin-top: 8px;
+        }
+        .wrap label{
+            font-size: 12px;
+            color: gray;
+        }
+        .wrap label>input{
+            margin-right: 10px;
+            padding: 3px;;
+            width: 220px;
+            height: 16px;
+            border:1px #DDD solid; 
+        }
+        .wrap button{
+            margin: 12px 0                  ;
+            padding: 2px;;
+            width: 40px;
+        }
+        .wrap .sum{
+            font-size: 30px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="input">
+            <label for="input"><input type="text" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15">输入数字求和，数字之间用半角","号分隔</label>
+        </div>
+        <button>求和</button>
+        <div class="sum">120</div>
+    </div>
+</body>
+<script>
+        
+    document.querySelector("button").onclick=function(){
+        var str = document.querySelector("input").value;
+        var strs = str.split(',');
+        var arrs = [];
+        var sum=0;
+        console.log(str);
+        strs.forEach((s)=>{
+            if (!Number.isNaN(Number.parseInt(s))){
+                arrs.push(Number.parseInt(s))
+             }
+        }
+        )
+        arrs.forEach(element => {
+            sum+=element
+        });
+        document.querySelector(".sum").innerText=sum;
+    }
+</script>
+</html>

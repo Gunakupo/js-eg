@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <style>
+        .wrap{
+            width: 280px;
+            margin: 0 auto;
+        }
+        label{
+            display: block;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        label input{
+            padding: 3px;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+        }
+        .btns{
+            margin-left: 50px;
+        }
+        .item{
+            width: 180px;height: 180px;
+            background-color: #000;
+            font-size: 12px;
+            padding: 10px;
+            color: white;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <label for="attr">属性名:<input type="text" name="" id="attr" value="background"></label>
+        <label for="value">属性值:<input type="text" name="" id="value" value="blue"></label>
+        <div class="btns">
+            <button>确定</button>
+            <button>重置</button>
+        </div>
+        <div class="item">
+            <span>在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</span>
+        </div>
+    </div>
+</body>
+<script>
+    var item = document.querySelector('.item');
+    var change = document.querySelectorAll('button')[0];
+    var reset = document.querySelectorAll('button')[1];
+    var vattr;
+    var vvalue
+    change.onclick=function(){
+        vattr  = document.querySelector('#attr').value;
+         vvalue = document.querySelector('#value').value;
+         item.style[vattr]=vvalue;
+    }
+    reset.onclick=function(){
+         item.removeAttribute('style');
+    }
+</script>
+</html>

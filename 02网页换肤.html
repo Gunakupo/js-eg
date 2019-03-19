@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>网页换肤</title>
+    <meta name="viewport" content="width=device-width,maximum-scale=1, initial-scale=1,user-scalable">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wrap{
+            width: 502px;
+            height: 50px;
+            margin: 0 auto;
+        }
+        .btn{
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            margin:10px 5px 10px 0;
+        }
+        .btn:hover{
+            cursor: pointer;
+        }
+        .btn:nth-child(1){
+            border: 5px solid red;
+            background-color: red;
+        }
+        .btn:nth-child(2){
+            border: 5px solid green;
+            background-color: green;
+        }
+        .btn:nth-child(3){
+            border: 5px solid black;
+            background-color: black;
+        }
+        .btns>.active{
+            background-color: #fff;
+        }
+        .cred{
+            background-color: #fdd;
+        }
+        .cgreen{
+            background-color: #A3C5A8;
+        }
+        .cblack{
+            background-color: #ccc;
+        }
+        .red{
+            background-color: #f00;
+        }
+        .green{
+            background-color: green;
+        }
+        .black{
+            background-color: black;
+        }
+    </style>
+    <style>
+        ul{
+            width: 500px;
+            height: 25px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .li{
+            float: left;
+            width: 82px;
+            height: 23px;
+            text-align: center;
+            line-height: 23px;
+            font-size:12px; 
+            list-style: none;
+            margin: 1px 0 1px 1px;
+        }
+        .li>a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .li>a:hover{
+            text-decoration: underline;
+        }
+    </style>
+    
+</head>
+<body class="cgreen">
+    <div class="wrap">
+        <div class="btns">
+            <span class="btn"></span>
+            <span class="btn active "></span>
+            <span class="btn"></span>
+        </div>
+        <div class="nav">
+            <ul>
+                <li class="li green">
+                    <a href="">新闻</a>
+                </li>
+                <li class="li green">
+                    <a href="">娱乐</a>
+                </li>
+                <li class="li green">
+                    <a href="">体育</a>
+                </li>
+                <li class="li green">
+                    <a href="">电影</a>
+                </li>
+                <li class="li green">
+                    <a href="">音乐</a>
+                </li>
+                <li class="li green">
+                    <a href="">旅游</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var btns=document.querySelectorAll(".btn");
+    var colors=["cred","cgreen","cblack"];
+    var licolors=["red","green","black"];
+    var list=document.querySelectorAll(".li");
+    btns.forEach((btn,i)=>(
+        btn.onclick=()=>(
+            btns.forEach((btn)=>(
+                btn.classList.remove("active")
+            )),
+            btn.classList.add("active"),
+            document.body.classList.remove("cred","cgreen","cblack"),
+            document.body.classList.add(colors[i]),
+            list.forEach((li)=>(
+                li.classList.remove("red","green","black"),
+                li.classList.add(licolors[i])
+            ),i)
+        )
+    ))
+</script>
+</html>

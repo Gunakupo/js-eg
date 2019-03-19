@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .msg{
+            display: none;
+        }
+        .msg-active{
+            display: block;
+        }
+        .wrap{
+            width: 200px;
+            margin: 10px auto;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+        input{
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .msg{
+            width: 188px;
+            padding: 5px;
+            border: 1px solid #f90;
+            margin-top: 5px;
+            background-color: #ffefa4;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <label for="in"> <input id="in" type="checkbox" >两周内自动登陆</label>
+        <div class="msg">为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</div>
+    </div>
+</body>
+<script>
+    var msg = document.querySelector(".msg");
+    document.querySelector("label").onmouseover=()=>(
+        msg.classList.add("msg-active"),
+        this.onmouseout=()=>(
+        msg.classList.remove("msg-active")
+        )
+    )
+</script>
+</html>

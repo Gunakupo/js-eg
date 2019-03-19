@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>弹出</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,user-scalable=no">
+    <style>
+        div>form{
+            width: 165px;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .form{
+            margin-top:15px; 
+        }
+        #btn:hover{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var shi=document.querySelector("#shi");
+            var qu=document.querySelector("#qu");
+            var btn=document.querySelector("#btn");
+            btn.onclick=function(){
+                alert(shi.value);
+                alert(qu.value);
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form action="">
+            <input type="text" id="shi" class="form" value="北京市">
+            <input type="text" id="qu" class="form"  value="朝阳区">
+            <button class="form"  id="btn">传参</button>
+        </form>
+    </div>
+</body>
+</html>

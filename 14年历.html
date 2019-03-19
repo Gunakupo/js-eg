@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>年历</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+        }
+        .wrap{
+            width: 248px;
+            margin: 10px auto;
+            background-color: #eaeaea;
+            padding:0 0 10px 8px;
+        }
+        .wrap>ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        .wrap>ul>li{
+            width: 40px;height: 40px;
+            background-color: #424242;
+            border: 1px #424242 solid;
+            float: left;
+            text-align: center;
+            padding: 5px;
+            font-size: 14px;
+            margin: 10px 10px 0 0;
+            color: #fff;
+            line-height: 1.3;
+            cursor: pointer;
+        }
+        .wrap>ul>.li-active{
+            background-color: #fff;
+            color: #f69;
+        }
+        .num{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .text{
+            width: 226px;
+            padding: 5px;
+            margin-top: 10px;
+            border: 1px #fff solid;
+            background-color: #f1f1f1;
+            color: #666;
+            font-weight: bold;
+        }
+        .text>.msg{
+            font-size: 12px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li class="li-active">
+                <div class="num">1</div>
+                <div class="month">JAN</div>
+            </li>
+            <li>
+                <div class="num">2</div>
+                <div class="month">FER</div>
+            </li>
+            <li>
+                <div class="num">3</div>
+                <div class="month">MAR</div>
+            </li>
+            <li>
+                <div class="num">4</div>
+                <div class="month">APR</div>
+            </li>
+            <li>
+                <div class="num">5</div>
+                <div class="month">MAY</div>
+            </li>
+            <li>
+                <div class="num">6</div>
+                <div class="month">JUN</div>
+            </li>
+            <li>
+                <div class="num">7</div>
+                <div class="month">JUL</div>
+            </li>
+            <li>
+                <div class="num">8</div>
+                <div class="month">AUG</div>
+            </li>
+            <li>
+                <div class="num">9</div>
+                <div class="month">SEP</div>
+            </li>
+            <li>
+                <div class="num">10</div>
+                <div class="month">OCT</div>
+            </li>
+            <li>
+                <div class="num">11</div>
+                <div class="month">NOV</div>
+            </li>
+            <li>
+                <div class="num">12</div>
+                <div class="month">DEC</div>
+            </li>
+        </ul>
+        <div class="text">
+            <p><span>1</span>月节日</p>
+            <p class="msg">元旦：1月1日至3日放假三天。</p>
+        </div>
+    </div>
+</body>
+<script>
+    var list = document.querySelectorAll("li");
+    var span = document.querySelector("span");
+    var msg = document.querySelector(".msg");
+    var text = [
+        {num:1,msg:"元旦：1月1日至3日放假三天。"},
+        {num:2,msg:"春节：2月2日至8日放假7天。"},
+        {num:3,msg:"妇女节：3月8日妇女节放假半天。"},
+        {num:4,msg:"清明节：4月3日至5日放假3天。"},
+        {num:5,msg:"劳动节：4月30日至5月2日放假3天。"},
+        {num:6,msg:"端午节：6月4日至6日放假3天。"},
+        {num:7,msg:"小暑：7月7日小暑。不放假。"},
+        {num:8,msg:"七夕节：8月6日七夕节。不放假。"},
+        {num:9,msg:"中秋节：9月10日至12日放假3天。"},
+        {num:10,msg:"国庆节：10月1日至7日放假7天。"},
+        {num:11,msg:"立冬：11月8日立冬。不放假。"},
+        {num:12,msg:"艾滋病日:12月1日\n废除奴隶制国际日:12月2日。"}
+        ];
+    list.forEach((li,i) => {
+        li.onmouseover=function(){
+            list.forEach((li)=>(
+                li.classList.remove("li-active")
+            ));
+            this.classList.add("li-active");
+            span.innerText=text[i].num;
+            msg.innerText=text[i].msg;
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>单一按钮显示/隐藏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+  color: #6b7980;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+#wrap {
+  width: 200px;
+  border: 1px solid #aaa;
+  margin: 10px auto;
+}
+#wrap .drop {
+  height: 30px;
+  border: 1px white solid;
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0 12px;
+  background-color: #CED3D7;
+  overflow: hidden;
+  cursor: pointer;
+}
+#wrap .drop span {
+  float: right;
+  width: 0px;
+  height: 0px;
+  border: 5px transparent solid;
+  border-top-color: #4C5F73;
+  margin-top: 13px;
+}
+#wrap .dropmenu {
+  background-color: #E9EDF2;
+}
+#wrap .dropmenu li {
+  font-size: 12px;
+}
+#wrap .dropmenu li a {
+  display: block;
+  cursor: pointer;
+  padding: 5px 12px;
+}
+#wrap .dropmenu li a:hover {
+  background-color: #fff;
+  text-decoration: underline;
+}
+#wrap .dropmenu li:nth-child(2) {
+  border-bottom: 1px white solid;
+}
+
+    </style>
+    <style>
+        .active {
+            display: none;
+        }
+        .up-triangle{
+            transform-origin: 5px 2px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="drop">
+            播放列表...
+            <span></span>
+        </div>
+        <div class="dropmenu">
+            <ul>
+                <li><a>玩家之徒 - 蔡依林</a></li>
+                <li><a>无限剑制 - JamesHarris</a></li>
+                <li><a>空心 - 光泽</a></li>
+                <li><a>温柔乡 - 陈雅森</a></li>
+                <li><a>自导自演 - 周杰伦</a></li>
+                <li><a>流年 - 王菲</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var drop = document.getElementsByClassName("drop")[0];
+    var dropmenu = document.getElementsByClassName("dropmenu")[0];
+    var triangle = drop.getElementsByTagName("span")[0];
+    drop.onclick=function(){
+        dropmenu.classList.toggle("active");
+        triangle.classList.toggle("up-triangle");
+    }
+</script>
+</html>

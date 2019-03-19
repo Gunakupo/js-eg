@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <style>
+        *{
+            margin: 0;
+            padding: 0
+            ;
+        }
+        .wrap{
+            width: 70px;
+            margin: 0 auto;
+            padding-top: 5px;
+        }
+        ul{
+            width: 68px;
+            border: 1px #9a99ff solid ;
+            list-style: none;
+            margin-top: 5px;
+            display:none;
+        }
+        li>a{
+            display: block;
+            width: 58px;
+            height: 24px;
+            color: #00c;
+            font-size: 12px;
+            padding: 0 5px;
+            text-decoration: none;
+            line-height: 24px;
+        }
+        li:nth-child(2){
+            border-bottom: 1px solid #9a99ff;
+        }
+        button{
+            cursor: pointer;
+        }
+        .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <button>输入法</button>
+        <ul class="">
+            <li><a href="">手写</a></li>
+            <li><a href="">拼音</a></li>
+            <li><a href="">关闭</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    var btn = document.querySelector("button");
+    var ul = document.querySelector("ul");
+    btn.onclick=function(){
+        ul.classList.toggle("active");
+    }
+</script>
+</html>

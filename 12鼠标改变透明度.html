@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>图片列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,user-scalable=no">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wrap{
+            width:700px;
+            height: 280px;
+            padding: 0 10px 10px 0;
+            border: 1px solid;
+            margin: 10px auto;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        li{
+            float: left;
+            width: 128px;height: 128px;
+            border: 1px #ccc solid;
+            margin: 10px 0 0 10px;
+            cursor: crosshair;
+        }
+        li>img{
+            opacity: 0.3;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="row">
+            <ul>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var imgs=document.querySelectorAll('img');
+    imgs.forEach((img,i)=>(
+        img.src='/12src/'+(i+1)+'.jpg',
+        img.onload=function(){
+            img.onmouseover=function(){
+            img.style.opacity=1.0;
+        };
+        img.onmouseout=function(){
+            img.style.opacity=0.3;
+        }
+        }
+    ))
+</script>
+</html>
